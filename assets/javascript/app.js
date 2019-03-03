@@ -1,0 +1,43 @@
+// INITIALIZE FIREBASE
+var config = {
+  apiKey: "AIzaSyCS6hNgChmB8TXy1wfFKoNtC994tgp3h14",
+  authDomain: "train-scheduler-a.firebaseapp.com",
+  databaseURL: "https://train-scheduler-a.firebaseio.com",
+  projectId: "train-scheduler-a",
+  storageBucket: "train-scheduler-a.appspot.com",
+  messagingSenderId: "430340327025"
+};
+firebase.initializeApp(config);
+
+// CONNECT MY DATABASE TO FIREBASE DATABASE
+var database = firebase.database();
+
+// BUTTON FOR ADDING EMPLOYEES
+
+  // GRAB USER INPUT
+
+  // CREATE LOCAL "TEMPORARY" OBJECT FOR HOLDING TRAIN DATA
+
+  // UPLOAD TRAIN DATA TO THE DATABASE
+
+  // LOGS EVERYTHING TO CONSOLE
+
+  // CLEAR ALL OF THE TEXT BOXES
+
+
+// CREATE FIREBASE EVENT FOR ADDING TRAIN TO THE DATABASE AND A ROW IN THE HTML WHEN A USER ADDS AN ENTRY
+
+  // STORE EVERYTHING INTO A VARIABLE
+
+  // TRAIN INFO
+
+  // PRETTIFY THE TRAIN START
+
+  // CALCULATE MONTHS WORKED USING HARDCORE MATH
+  // TO CALCULATE THE MONTHS WORKED
+
+  // CALCULATE THE TOTAL BILLED RATE
+
+  // CREATE THE NEW ROW
+
+  // APPEND THE NEW ROW TO THE TABLE
