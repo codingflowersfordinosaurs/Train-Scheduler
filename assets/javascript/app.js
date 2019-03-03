@@ -46,19 +46,35 @@ $("#addTrain-btn"),on("click", function(event) {
 // CREATE FIREBASE EVENT FOR ADDING TRAIN TO THE DATABASE AND A ROW IN THE HTML WHEN A USER ADDS AN ENTRY
 database.ref().on("child_added", function(chilcSnapshot) {
   console.log(childSnapshot.val());
-  
-})
   // STORE EVERYTHING INTO A VARIABLE
-
+  var trainName = childSnapshot.val().name;
+  var destination = childSnapshot.val().place;
+  var trainTime = childSnapshot.val().time;
+  var frequency = childSnapshot.val().freq;
   // TRAIN INFO
-
+  console.log(trainName);
+  console.log(destination);
+  console.log(trainTime);
+  console.log(frequency);
   // PRETTIFY THE TRAIN START
-
-  // CALCULATE MONTHS WORKED USING HARDCORE MATH
-  // TO CALCULATE THE MONTHS WORKED
-
-  // CALCULATE THE TOTAL BILLED RATE
+  var trainStartPretty = moment.unix(trainTime).format(HH:MM:AM/PM);
+  
 
   // CREATE THE NEW ROW
-
+  var newRow = $("<tr>").append(
+    $("<td>").text(trainName),
+    $("<td>").text(destination),
+    $("<td>").text(trainTime),
+    $("<td>").text(frequency),
+    $("<td>").text(trainStartPretty),
+  );
   // APPEND THE NEW ROW TO THE TABLE
+  $("#train-table > tbody").append(newRow);
+});
+  
+
+  
+
+  
+
+  
