@@ -1,11 +1,11 @@
 // INITIALIZE FIREBASE
 var config = {
-  apiKey: "AIzaSyCS6hNgChmB8TXy1wfFKoNtC994tgp3h14",
-  authDomain: "train-scheduler-a.firebaseapp.com",
-  databaseURL: "https://train-scheduler-a.firebaseio.com",
-  projectId: "train-scheduler-a",
-  storageBucket: "train-scheduler-a.appspot.com",
-  messagingSenderId: "430340327025"
+  apiKey: "*check file on local machine",
+  authDomain: "*check file on local machine",
+  databaseURL: "*check file on local machine",
+  projectId: "*check file on local machine",
+  storageBucket: "*check file on local machine",
+  messagingSenderId: "*check file on local machine"
 };
 firebase.initializeApp(config);
 
