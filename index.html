@@ -1,100 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <title>Train Scheduler</title>
-</head>
-<body>
-  
-  <div class="container">
-    <!-- JUMBOTRON -->
-    <div class="jumbotron">
-      <h1 class="jumbotron-title">Train Time</h1>
-    </div>
 
-    <div class="row">
+<html lang="en-us">
 
-      <div class="col-lg-12">
+  <head>
 
-        <!-- CURRENT TRAIN SCHEDULE -->
-        <div class="card">
-          <div class="card-header">Current Train Time</div>
-          <div class="card-body">
-            <table class="table table-hover" id="train-table">
-              <thead>
-                <tr>
-                  <th>train name</th>
-                  <th>destination</th>
-                  <th>frequency(minutes(min))</th>
-                  <th>next arrival</th>
-                  <th>minutes away</th>
-                </tr>
-              </thead>
-              <tbody>
+    <meta charset="UTF-8">
+    <title>Multiplayer Rocks Paper Scissors</title>
 
-              </tbody>
-            </table>
+    <!-- CSS reset sheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+
+    <!-- Our Own CSS File -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Firebase Link -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+  </head>
+
+  <body>
+
+    <header>
+      <h1>Rock Paper Scissors</h1>
+    </header>
+
+    <div id="sizer">
+
+      <div id="swap-zone"><input id="username" placeholder="Name"/>
+        <button id="start">Start</button>
+      </div>
+
+      <div id="current-turn"><h2></h2></div>
+
+      <div id="game-div">
+
+        <div id="player1">
+          <h3 id="player1-name">Player1</h3>
+          <ul>
+          </ul>
+          <div id="player1-chosen"></div>
+          <div class="outcomes">
+            <div class="outcome-trackers" id="player1-wins"></div>
+            <div class="outcome-trackers" id="player1-losses"></div>
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-lg-12">
-            <!-- ADD A TRAIN -->
-            <div class="card">
-              <div class="card-header">Add Train</div>
-              <div class="card-body">
-                <!-- ENTRY FORM -->
-                <form>
-                  <div class="form-group">
-                    <label for="train-name-input">Train Name</label>
-                    <input type="text" class="form-control" id="train-name-input" placeholder="train name">
-                  </div>
+        <div id="result"><h2></h2></div>
 
-                  <div class="form-group">
-                    <label for="destination-input">Destination</label>
-                    <input type="text" class="form-control" id="destination-input" placeholder="destination">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="time-input">Train HH:MM:AM/PM </label>
-                    <input type="text" class="form-control" id="time-input" placeholder="train time">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="frequency-input">Frequency (minutes(min))</label>
-                    <input type="text" class="form-control" id="frequency-input" placeholder="500 minutes">
-                  </div>
-
-                  <button type="submit" class="btn btn-primary" id="addTrain-btn">Submit</button>
-                </form>
-              </div>
-            </div>
+        <div id="player2">
+          <h3 id="player2-name">Player2</h3>
+          <ul>
+          </ul>
+          <div id="player2-chosen"></div>
+          <div class="outcomes">
+            <div class="outcome-trackers" id="player2-wins"></div>
+            <div class="outcome-trackers" id="player2-losses"></div>
           </div>
         </div>
-        
 
       </div>
 
+      <div id="chat">
+        <div id="chat-messages"></div>
+        <div id="chat-bar">
+          <input id="chat-input" />
+          <button id="chat-send">Send</button>
+        </div>
+      </div>
+
     </div>
-    
-  </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <h4>thank you for riding public transport</h4>
-  </footer>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  <script 
-    src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
-    crossorigin="anonymous">
-  </script>
-  <script src="./assets/javascript/app.js"></script>
-</body>
+    <!-- Script -->
+    <script src="app.js"></script>
+
+  </body>
+
 </html>
+
