@@ -2,81 +2,92 @@
 
 <html lang="en-us">
 
-  <head>
+<head>
 
-    <meta charset="UTF-8">
-    <title>Multiplayer Rocks Paper Scissors</title>
+  <meta charset="UTF-8">
+  <header>TrainTime</header>
 
-    <!-- CSS reset sheet -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <!-- Our Own CSS File -->
-    <link rel="stylesheet" href="style.css">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-    <!-- Firebase Link -->
-    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+  <!-- Firebase Reference -->
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
 
-  </head>
+  <!-- Moment.js Reference -->
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
-  <body>
+</head>
 
-    <header>
-      <h1>Rock Paper Scissors</h1>
-    </header>
-
-    <div id="sizer">
-
-      <div id="swap-zone"><input id="username" placeholder="Name"/>
-        <button id="start">Start</button>
-      </div>
-
-      <div id="current-turn"><h2></h2></div>
-
-      <div id="game-div">
-
-        <div id="player1">
-          <h3 id="player1-name">Player1</h3>
-          <ul>
-          </ul>
-          <div id="player1-chosen"></div>
-          <div class="outcomes">
-            <div class="outcome-trackers" id="player1-wins"></div>
-            <div class="outcome-trackers" id="player1-losses"></div>
-          </div>
-        </div>
-
-        <div id="result"><h2></h2></div>
-
-        <div id="player2">
-          <h3 id="player2-name">Player2</h3>
-          <ul>
-          </ul>
-          <div id="player2-chosen"></div>
-          <div class="outcomes">
-            <div class="outcome-trackers" id="player2-wins"></div>
-            <div class="outcome-trackers" id="player2-losses"></div>
-          </div>
-        </div>
-
-      </div>
-
-      <div id="chat">
-        <div id="chat-messages"></div>
-        <div id="chat-bar">
-          <input id="chat-input" />
-          <button id="chat-send">Send</button>
-        </div>
-      </div>
-
+<body>
+  <!-- Train Time -->
+  <div class="container">
+    <!-- Jumbotron -->
+    <div class="jumbotron" style="background-color: #7F462C; color: white">
+      <h1 class="text-center">Anytime is Train Time</h1>
+      <h3 class="text-center">Choo Choo. Chee Chee.</h3>
     </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <!-- Train Schedule -->
+        <div class="card">
+          <div class="card-header">
+            Current Train Schedule
+          </div>
+          <div class="card-body">
+            <table class="table table-hover" id='train-table'>
+              <thead>
+                <tr>
+                  <th>Train Name</th>
+                  <th>Destination</th>
+                  <th>Frequency (min)</th>
+                  <th>Next Arrival</th>
+                  <th>Minutes Away</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Add Train  -->
+        <div class="card mt-2">
+          <div class="card-header">
+            Add Train
+          </div>
+          <div class="card-body">
+            <!-- Entry Form -->
+            <form>
+              <div class="form-group">
+                <label for="train-name-input">Train Name</label>
+                <input type="text" class="form-control" id="train-name-input">
+              </div>
+              <div class="form-group">
+                <label for="destination-input">Destination</label>
+                <input type="text" class="form-control" id="destination-input">
+              </div>
+              <div class="form-group">
+                <label for="first-train-input">First Train Time (HH:mm - military time)</label>
+                <input type="text" class="form-control" id="first-train-input">
+              </div>
+              <div class="form-group">
+                <label for="frequency-input">Frequency (min)</label>
+                <input type="text" class="form-control" id="frequency-input">
+              </div>
+              <button type="submit" class="btn btn-primary" id="add-train-btn">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Script -->
+  <script src="traintime-logic.js"></script>
 
-    <!-- Script -->
-    <script src="app.js"></script>
-
-  </body>
+</body>
 
 </html>
-
